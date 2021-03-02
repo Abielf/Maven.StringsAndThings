@@ -15,12 +15,26 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
+        //I feel obligated to mention return 2 would solve all cases.
+        //But I'll make the whole thing as described in good faith.
         int counter=0;
+        int countYZ=0;
+        //checks the last index for a y or z
+        if (input.charAt(input.length()-1)=='y'){countYZ++;}
+        if (input.charAt(input.length()-1)=='z'){countYZ++;}
         while(counter<=input.length()-1){
+            if(input.charAt(counter)==' ') {
+                if (input.charAt(counter - 1) == 'y') {
+                    countYZ++;
+                }
+                if (input.charAt(counter- 1) == 'z') {
+                    countYZ++;
+                }
+            }
 
-
+        counter++;
         }
-        return null;
+        return countYZ;
     }
 
     /**
