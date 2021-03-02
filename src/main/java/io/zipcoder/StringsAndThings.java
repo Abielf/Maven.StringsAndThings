@@ -34,11 +34,17 @@ public class StringsAndThings {
      */
     public String removeString(String base, String remove){
         int counter=0;
-        while(counter<=base.length()-1){
-
-
+        String oldStr=base;
+        String newStr="";
+        while(counter<=oldStr.length()-remove.length()){
+        if (remove.equals(oldStr.substring(counter, counter+remove.length()))){
+            newStr=oldStr.replace(remove, "");
+            oldStr=newStr;
+            counter=0;
         }
-        return null;
+        counter++;
+        }
+        return oldStr;
     }
 
     /**
